@@ -19,7 +19,7 @@
 <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
 <div class="page-group">
     <!-- 单个page ,第一个.page默认被展示-->
-    <div class="page">
+    <div class="page" id="video_page">
         <!-- 标题栏 -->
         <header class="bar bar-nav add_bar">
             <h1 class="title">视频</h1>
@@ -35,7 +35,7 @@
                 <span class="icon icon_tab_home"><img src="img/news_lowlight.png"></span>
                 <span class="tab-label">资讯</span>
             </a>
-            <a class="tab-item external" href="photo.html">
+            <a class="tab-item external" href="photos.html">
                 <span class="icon icon_tab_home"><img src="img/products_lowlight.png"></span>
                 <span class="tab-label">产品图库</span>
             </a>
@@ -68,54 +68,8 @@
             </div>
         </div>
     </div>
-
-
-</div>
-
-<script type='text/javascript' src="http://g.alicdn.com/sj/lib/zepto/zepto.min.js" charset='utf-8'></script>
-<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-<script src="assets/js/config.js"></script>
-
 <script>
-    $(function() {
 
-        $.ajax({
-            type:"get",//请求方式
-   //       url:"dist/data/video.json",//发送请求地址
-			url:"http://117.132.8.93:8078/survey/h5/video.json",
-//        data:{//发送给数据库的数据
-//            username:$("#username").val(),
-//            content:$("#content").val()
-//        },
-            async: false,
-            //请求成功后的回调函数有两个参数
-            success:function(data,textStatus){
-
-                initVideo(data.data.video);
-            }
-        });
-
-		        /*=== 有视频 ===*/
-        var myPhotoBrowserVideo = $.photoBrowser({
-            photos : [
-                {
-                    html: '<iframe src="video/Clip_480_5sec_6mbps_h264.mp4" frameborder="0" allowfullscreen></iframe>',
-                    caption: 'Woodkid - Run Boy Run (Official HD Video)'
-                },
-
-            ],
-            theme: 'dark',
-            type: 'standalone'
-        });
-        $(document).on('click','.pb-standalone-video',function () {
-            myPhotoBrowserVideo.open();
-        });
-
-
-        loadLast();
-        $.init();
-    });
     var videoCount = 0;
     function initVideo($video) {
         var main_div = $('#home_part_div');
@@ -175,11 +129,11 @@
 
             $.ajax({
                 type: "get",//请求方式
-                url: "dist/data/video.json",//发送请求地址
-                //        data:{//发送给数据库的数据
-                //            username:$("#username").val(),
-                //            content:$("#content").val()
-                //        },
+                url: path+"video.json",//发送请求地址
+                //url: "http://owiss-cloud.test.liuruidong.net/zzj/video.json",//发送请求地址
+                data:{//发送给数据库的数据
+                    lastIndex:lastIndex
+                },
                 async: false,
                 //请求成功后的回调函数有两个参数
                 success: function (data, textStatus) {
@@ -198,9 +152,47 @@
         });
     }
 
-    function  goDetail($videoId) {
+    /*=== 有视频 ===*/
 
+    var myPhotoBrowserVideo = $.photoBrowser({
+        photos : [
+            {
+                html: '<iframe src="video/Clip_480_5sec_6mbps_h264.mp4" frameborder="0" allowfullscreen></iframe>'
+//                html:'<iframe src="http://player.youku.com/embed/XMTU2NTU0NjQxNg==" frameborder=0 allowfullscreen></iframe>'
+            },
+
+        ],
+        theme: 'dark',
+        type: 'standalone'
+    });
+    $(document).on('click','.pb-standalone-video',function () {
+        myPhotoBrowserVideo.open();
+        sendClick();
+    });
+
+    //告诉后台有人点击。。
+    function sendClick() {
+        $.ajax({
+            type: "get",//请求方式
+            url: path+"video.json",//发送请求地址
+            //        data:{//发送给数据库的数据
+            //            username:$("#username").val(),
+            //            content:$("#content").val()
+            //        },
+            async: false,
+            //请求成功后的回调函数有两个参数
+            success: function (data, textStatus) {
+
+            }
+        });
     }
+
 </script>
+</div>
+<script type='text/javascript' src="http://g.alicdn.com/sj/lib/zepto/zepto.min.js" charset='utf-8'></script>
+<script src="assets/js/config.js"></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='dist/js/sm-extend.min.js' charset='utf-8'></script>
+<script src="dist/busi.js"></script>
 </body>
 </html>

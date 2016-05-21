@@ -93,7 +93,8 @@ $(function() {
 
     $.ajax({
         type:"get",//请求方式
-        url:"dist/data/news.json",//发送请求地址
+        url:path+"news.json",//发送请求地址
+          //url:"http://owiss-cloud.test.liuruidong.net/zzj/news.json",//发送请求地址
 //        data:{//发送给数据库的数据
 //            username:$("#username").val(),
 //            content:$("#content").val()
@@ -150,11 +151,12 @@ function refreshLoad () {
         //先去请求最新的数据，要求数据按时间正序排序，越新的越靠后。
         $.ajax({
             type:"get",//请求方式
-            url:"dist/data/news.json",//发送请求地址
-//        data:{//发送给数据库的数据
-//            username:$("#username").val(),
-//            content:$("#content").val()
-//        },
+            url:path+"news.json",//发送请求地址
+            //url:"http://owiss-cloud.test.liuruidong.net/zzj/news.json",//发送请求地址
+//            data:{//发送给数据库的数据
+//                username:$("#username").val(),
+//                content:$("#content").val()
+//            },
             async: false,
             //请求成功后的回调函数有两个参数
             success:function(data,textStatus){
@@ -178,8 +180,6 @@ function refreshLoad () {
             // 每次加载添加多少条目
             var itemsPerLoad = 20;
 
-
-
             $(document).on('infinite', '.infinite-scroll-bottom', function() {
                 console.log("无限加载开始啦、、、");
                 // 如果正在加载，则退出
@@ -189,11 +189,12 @@ function refreshLoad () {
 
                 $.ajax({
                     type:"get",//请求方式
-                    url:"dist/data/news.json",//发送请求地址
-        //        data:{//发送给数据库的数据
-        //            username:$("#username").val(),
-        //            content:$("#content").val()
-        //        },
+                    url:path+"news.json",//发送请求地址
+                    //url:"http://owiss-cloud.test.liuruidong.net/zzj/news.json",//发送请求地址
+                    data:{
+                        //发送给数据库的数据
+                        lastIndex: lastIndex
+                    },
                     async: false,
                     //请求成功后的回调函数有两个参数
                     success:function(data,textStatus){
@@ -212,16 +213,7 @@ function refreshLoad () {
 
     }
 
-function addItems(number, lastIndex) {
-    // 生成新条目的HTML
-    var html = '';
-    for (var i = lastIndex + 1; i <= lastIndex + number; i++) {
-        html += '<li class="item-content"><div class="item-inner"><div class="item-title">新条目</div></div></li>';
-    }
-    // 添加新条目
-    $('.infinite-scroll .list-container').append(html);
-}
-
 </script>
+</div>
 </body>
 </html>

@@ -19,29 +19,19 @@
 <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
 <div class="page-group">
     <!-- 单个page ,第一个.page默认被展示-->
-    <div class="page">
+    <div class="page" id="product_detail_page">
         <!-- 标题栏 -->
         <header class="bar bar-nav add_bar">
-            <a class="icon icon-left pull-left"></a>
+            <a class="icon icon-left pull-left back"></a>
             <h1 class="title">小松SY220C挖掘机</h1>
         </header>
-
-
 
         <!-- 这里是页面内容区 -->
         <div class="content" style="background-color: #ffffff;">
             <!-- Slider -->
             <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="img/picture2.png" alt="" style='width: 100%'>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/picture2.png" alt="" style='width: 100%'>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="img/picture2.png" alt="" style='width: 100%'>
-                    </div>
+                <div class="swiper-wrapper" id="pic_div">
+
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -49,11 +39,11 @@
             <div class="product_deta_titlebox">
                 <div class="row no-gutter">
                     <div class="col-80">
-                        <div class="product_deta_title">小松SY220C挖掘机</div>
-                        <div class="product_deta_price">10万</div>
+                        <div class="product_deta_title" id="pro_title_div"></div>
+                        <div class="product_deta_price" id="pro_price_div"></div>
                     </div>
                     <div class="col-20" style="margin-top: 0.8rem;">
-                        <div class="product_deta_toPic">查看图库></div>
+                        <div class="product_deta_toPic"><a id="a_watch" >查看图库></a></div>
                     </div>
                 </div>
             </div>
@@ -67,56 +57,56 @@
                     <div class="row no-gutter" style="margin-bottom:0.3rem;">
                         <div class="col-50">
                             <div class="row no-gutter">
-                                <div class="col-50 product_dateTit">品牌</div>
-                                <div class="col-50 product_dateCon">小松</div>
+                                <div class="col-50 product_dateTit">设备类型</div>
+                                <div class="col-50 product_dateCon" id="brand_sblx_div"></div>
                             </div>
                         </div>
+                        <div class="col-50">
+                            <div class="row no-gutter">
+                                <div class="col-50 product_dateTit">设备品牌</div>
+                                <div class="col-50 product_dateCon" id="brand_sbpp_div"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row no-gutter" style="margin-bottom:0.3rem;">
                         <div class="col-50">
                             <div class="row no-gutter">
                                 <div class="col-50 product_dateTit">设备型号</div>
-                                <div class="col-50 product_dateCon">SY220C</div>
+                                <div class="col-50 product_dateCon" id="brand_sbxh_div"></div>
+                            </div>
+                        </div>
+                        <div class="col-50">
+                            <div class="row no-gutter">
+                                <div class="col-50 product_dateTit">设备状态</div>
+                                <div class="col-50 product_dateCon" id="brand_sbzt_div"></div>
                             </div>
                         </div>
                     </div>
                     <div class="row no-gutter" style="margin-bottom:0.3rem;">
                         <div class="col-50">
                             <div class="row no-gutter">
-                                <div class="col-50 product_dateTit">三项和(s)</div>
-                                <div class="col-50 product_dateCon">小松</div>
+                                <div class="col-50 product_dateTit">合格证</div>
+                                <div class="col-50 product_dateCon" id="brand_hgz_div"></div>
                             </div>
                         </div>
                         <div class="col-50">
                             <div class="row no-gutter">
-                                <div class="col-50 product_dateTit">额定功率(Kw/rpm)</div>
-                                <div class="col-50 product_dateCon">1000</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row no-gutter" style="margin-bottom:0.3rem;">
-                        <div class="col-50">
-                            <div class="row no-gutter">
-                                <div class="col-50 product_dateTit">发动机型号</div>
-                                <div class="col-50 product_dateCon">小松</div>
-                            </div>
-                        </div>
-                        <div class="col-50">
-                            <div class="row no-gutter">
-                                <div class="col-50 product_dateTit">挖掘力(掘起力)(kN)</div>
-                                <div class="col-50 product_dateCon">挖掘机</div>
+                                <div class="col-50 product_dateTit">出厂日期</div>
+                                <div class="col-50 product_dateCon" id="brand_ccrq_div"></div>
                             </div>
                         </div>
                     </div>
                     <div class="row no-gutter" style="margin-bottom:0.3rem;">
                         <div class="col-50">
                             <div class="row no-gutter">
-                                <div class="col-50 product_dateTit">额定铲斗容量(m3)</div>
-                                <div class="col-50 product_dateCon">小松</div>
+                                <div class="col-50 product_dateTit">发布日期</div>
+                                <div class="col-50 product_dateCon" id="brand_fbrq_div"></div>
                             </div>
                         </div>
                         <div class="col-50">
                             <div class="row no-gutter">
-                                <div class="col-50 product_dateTit">整机操作容量(kg)</div>
-                                <div class="col-50 product_dateCon">挖掘机</div>
+                                <div class="col-50 product_dateTit">发票</div>
+                                <div class="col-50 product_dateCon" id="brand_fp_div"></div>
                             </div>
                         </div>
                     </div>
@@ -124,7 +114,7 @@
                         <div class="col-50">
                             <div class="row no-gutter">
                                 <div class="col-50 product_dateTit">吨位</div>
-                                <div class="col-50 product_dateCon">小松</div>
+                                <div class="col-50 product_dateCon" id="brand_don_div"></div>
                             </div>
                         </div>
                         <div class="col-50">
@@ -146,39 +136,84 @@
                 </div>
             </div>
         </div>
+        <script>
+
+            var productId;
+
+            function giveProductId($productId) {
+                productId = $productId;
+                $('#a_watch').attr("href", "picture_list3.html?productId="+productId);
+            }
+            /**
+             * 初始化详情页面数据
+             * @param $data
+             */
+            function initProductDetail($data) {
+                console.log("要啥自行车");
+                var mainPicDiv = $('#pic_div');
+
+                for (var i = 0; i< 3; i++) {
+                    var pic_str = '<div class="swiper-slide"> ' +
+                            '<img src="'+ $data.pictures[i].cover_img_url +'" alt="" style="width: 100%"> </div>';
+
+                    mainPicDiv.append(pic_str);
+                }
+                $('#pro_title_div').text($data.name);
+                $('#pro_price_div').text($data.price);
+
+                $('#brand_sblx_div').text($data.device_type);
+                $('#brand_sbpp_div').text($data.brand);
+                $('#brand_sbxh_div').text($data.device_model);
+                $('#brand_sbzt_div').text($data.device_status);
+                $('#brand_hgz_div').text($data.certificate);
+                $('#brand_ccrq_div').text($data.producted_time);
+                $('#brand_fbrq_div').text($data.created_time);
+                $('#brand_fp_div').text($data.fapiao);
+                $('#brand_don_div').text($data.don);
+
+            }
+
+            function GetQueryString(name)
+            {
+                var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+                var r = window.location.search.substr(1).match(reg);
+                if(r!=null)return  decodeURI(r[2]); return null;
+            }
+
+            function loadSwiper() {
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    paginationClickable: true,
+                    centeredSlides: true,
+//        autoplay: 2500,
+                    autoplayDisableOnInteraction: false,
+                    loop : true
+                });
+            }
+        </script>
     </div>
-
-
 </div>
 
 <script type='text/javascript' src="http://g.alicdn.com/sj/lib/zepto/zepto.min.js" charset='utf-8'></script>
+<script src="assets/js/config.js"></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-<script src="dist/js/sm-city-picker.js"></script>
-<script src="assets/js/config.js"></script>
 <script src="assets/js/swiper.js"></script>
+<script src="dist/busi.js"></script>
 <script>
+$(function() {
 //    var swiper = new Swiper('.swiper-container', {
 //        pagination: '.swiper-pagination',
 //        nextButton: '.swiper-button-next',
 //        prevButton: '.swiper-button-prev',
 //        paginationClickable: true,
-//        spaceBetween: 30,
 //        centeredSlides: true,
-//        autoplay: 2500,
-//        autoplayDisableOnInteraction: false
+////        autoplay: 2500,
+//        autoplayDisableOnInteraction: false,
+//        loop : true
 //    });
-$(function() {
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        paginationClickable: true,
-        centeredSlides: true,
-//        autoplay: 2500,
-        autoplayDisableOnInteraction: false,
-        loop : true
-    });
 });
 </script>
 </body>

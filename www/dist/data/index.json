@@ -18,35 +18,35 @@
                   {
                         "img_url":"img/logo/ds.png",
                         "name":"卡特彼勒",
-                        "brand_id":""
+                        "brand_id":"1"
                   }, {
                         "img_url":"img/logo/wew.png",
                         "name":"沃尔沃",
-                        "brand_id":""
+                        "brand_id":"2"
                   }, {
                         "img_url":"img/logo/xs.png",
                         "name":"小松",
-                        "brand_id":""
+                        "brand_id":"3"
                   }, {
                         "img_url":"img/logo/rl.png",
                         "name":"日立",
-                        "brand_id":""
+                        "brand_id":"4"
                   }, {
                         "img_url":"img/logo/zy.png",
                         "name":"住友",
-                        "brand_id":""
+                        "brand_id":"5"
                   }, {
                         "img_url":"img/logo/sg.png",
                         "name":"神钢",
-                        "brand_id":""
+                        "brand_id":"6"
                   }, {
                         "img_url":"img/logo/ds.png",
                         "name":"斗山",
-                        "brand_id":""
+                        "brand_id":"7"
                   }, {
                         "img_url":"img/logo/xd.png",
                         "name":"现代",
-                        "brand_id":""
+                        "brand_id":"8"
                   }
             ],
             "video":[

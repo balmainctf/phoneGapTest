@@ -19,10 +19,10 @@
 <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
 <div class="page-group">
     <!-- 单个page ,第一个.page默认被展示-->
-    <div class="page">
+    <div class="page page-current" id='search_page'>
         <!-- 标题栏 -->
         <header class="bar bar-nav add_bar">
-            <a href="index.html" class="left" style="width:10%"><img src="img/cancel.png" class="search_btnClose"></a>
+            <a class="left back" style="width:10%"><img src="img/cancel.png" class="search_btnClose"></a>
             <div class="search-input left" style="width:90%;position: relative;">
                 <label  class="icon icon-search" for="search" style="color:#666;"></label>
                 <input type="search" class="search_inp" style="border-radius: 0.7rem;padding-left:0.4rem;" id='search' placeholder='输入关键字...'/>
@@ -41,34 +41,16 @@
 </div>
 
 <script type='text/javascript' src="http://g.alicdn.com/sj/lib/zepto/zepto.min.js" charset='utf-8'></script>
+<script src="assets/js/config.js"></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-<script src="dist/js/sm-city-picker.js"></script>
-<script src="assets/js/config.js"></script>
-<script src="assets/js/swiper.js"></script>
 <script>
-//    var swiper = new Swiper('.swiper-container', {
-//        pagination: '.swiper-pagination',
-//        nextButton: '.swiper-button-next',
-//        prevButton: '.swiper-button-prev',
-//        paginationClickable: true,
-//        spaceBetween: 30,
-//        centeredSlides: true,
-//        autoplay: 2500,
-//        autoplayDisableOnInteraction: false
-//    });
 $(function() {
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
-        paginationClickable: true,
-        centeredSlides: true,
-//        autoplay: 2500,
-        autoplayDisableOnInteraction: false,
-        loop : true
-    });
+
 });
+</script>
+<script>
+    $.init();
 </script>
 </body>
 </html>
