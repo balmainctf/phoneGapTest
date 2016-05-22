@@ -1,7 +1,7 @@
 /**
  * Created by yangl on 2016/5/17.
  */
-var path = "dist/data/";
+var path = "http://owiss-cloud.test.liuruidong.net/zzj/";
 var path_local = "dist/data/";
 var path_remote = "http://owiss-cloud.test.liuruidong.net/zzj/"
 $(function () {
