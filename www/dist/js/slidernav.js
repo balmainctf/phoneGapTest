@@ -28,7 +28,7 @@ $.fn.sliderNav = function(options) {
 
 		$('.slider-content li', slider).removeClass('selected');
 		$(target).addClass('selected');
-		console.log(lstHeight);
+		console.log("这高度：：" + lstHeight);
 
 		//$('.slider-content',slider).scrollTop(lstHeight);
 		$j('.slider-content', slider).stop().animate({scrollTop: '+=' + pScroll + 'px'});

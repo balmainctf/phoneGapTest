@@ -68,6 +68,7 @@
             </div>
         </div>
     </div>
+
 <script>
 
     var videoCount = 0;
@@ -78,7 +79,7 @@
 
             console.log("说好的video的id呢：" + $video[i] );
             //先创建视频模块子元素
-            var item_content_div = '<div class="col-50" onclick="goDetail('+ $video[i].video_id +')"> ' +
+            var item_content_div = '<div class="col-50"> ' +
                     '<div class="home_img video_img"> ' +
                     '<img class="card-cover" src="' + $video[i].cover_img_id + '" > ' +
                     '</div> ' +
@@ -152,23 +153,26 @@
         });
     }
 
-    /*=== 有视频 ===*/
+        /*=== 有视频 ===*/
 
-    var myPhotoBrowserVideo = $.photoBrowser({
-        photos : [
-            {
-                html: '<iframe src="video/Clip_480_5sec_6mbps_h264.mp4" frameborder="0" allowfullscreen></iframe>'
-//                html:'<iframe src="http://player.youku.com/embed/XMTU2NTU0NjQxNg==" frameborder=0 allowfullscreen></iframe>'
-            },
+        var myPhotoBrowserVideo = $.photoBrowser({
+            photos : [
+                {
+                    //url: 'http://player.youku.com/embed/XMTU2NTU0NjQxNg=='
+                    html:'<iframe src="http://player.youku.com/embed/XMTU2NTU0NjQxNg==" frameborder=0 allowfullscreen></iframe>'
+                },
 
-        ],
-        theme: 'dark',
-        type: 'standalone'
-    });
-    $(document).on('click','.pb-standalone-video',function () {
-        myPhotoBrowserVideo.open();
-        sendClick();
-    });
+            ],
+            theme: 'dark',
+            type: 'standalone'
+        });
+        $(document).on('click','.pb-standalone-video',function () {
+            //myPhotoBrowserVideo.open();
+            console.log(11111);
+            sendClick();
+        });
+
+
 
     //告诉后台有人点击。。
     function sendClick() {
@@ -191,8 +195,29 @@
 </div>
 <script type='text/javascript' src="http://g.alicdn.com/sj/lib/zepto/zepto.min.js" charset='utf-8'></script>
 <script src="assets/js/config.js"></script>
-<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.1/js/??sm.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='dist/js/sm-extend.min.js' charset='utf-8'></script>
+<script src="assets/js/swiper.js"></script>
 <script src="dist/busi.js"></script>
+<script>
+
+    var myPhotoBrowserVideo = $.photoBrowser({
+        photos : [
+            {
+                //url: 'http://player.youku.com/embed/XMTU2NTU0NjQxNg=='
+                html:'<iframe src="http://player.youku.com/embed/XMTU2NTU0NjQxNg==" frameborder=0 allowfullscreen></iframe>'
+            },
+
+        ],
+        theme: 'dark',
+        type: 'standalone'
+    });
+    $(document).on('click','.pb-standalone-video',function () {
+        myPhotoBrowserVideo.open();
+        console.log(11111);
+        sendClick();
+    });
+
+</script>
 </body>
 </html>

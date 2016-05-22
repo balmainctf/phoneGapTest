@@ -1,8 +1,8 @@
 /**
  * Created by yangl on 2016/5/17.
  */
-var path = "http://owiss-cloud.test.liuruidong.net/zzj/";
-var path_local = "";
+var path = "dist/data/";
+var path_local = "dist/data/";
 var path_remote = "http://owiss-cloud.test.liuruidong.net/zzj/"
 $(function () {
     'use strict';
@@ -201,10 +201,22 @@ $(function () {
 
     var photo_page_flag = false;
     $(document).on("pageInit", "#photo_page", function(e, pageId, $page) {
+        console.log("图库加载了吗？"+ photo_page_flag);
         if (photo_page_flag) return;
         photo_page_flag = true;
 
         loadBrands();
+    });
+
+    var video_watch_page_flag = false;
+    $(document).on("pageInit", "#photo_page", function(e, pageId, $page) {
+        console.log("开始播放视频加载了吗页面？"+ video_watch_page_flag);
+        if (video_watch_page_flag) return;
+        video_watch_page_flag = true;
+
+        var video_src = GetQueryString("video_src");
+        initVideoWatch(video_src);
+        
     });
 
     

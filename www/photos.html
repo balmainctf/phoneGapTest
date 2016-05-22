@@ -68,6 +68,7 @@
 
         </div>
     </div>
+
 <script>
     var a_z = new Array();
     for(var i=0;i<26;i++){
@@ -116,20 +117,31 @@
             }
         }
 
-        initSlider();
+        //initSlider();
     }
 
 </script>
 
-<script type='text/javascript' src="http://g.alicdn.com/sj/lib/zepto/zepto.min.js" charset='utf-8'></script>
-<script type="text/javascript" src="dist/js/jquery-1.4.2.js"></script>
-<script type="text/javascript" src="dist/js/slidernav.js"></script>
+    <script type='text/javascript' src="http://g.alicdn.com/sj/lib/zepto/zepto.min.js" charset='utf-8'></script>
+    <script type="text/javascript" src="dist/js/jquery-1.4.2.js"></script>
+    <script type="text/javascript" src="dist/js/slidernav.js"></script>
 <script type="text/javascript">
-
+//    var ifInit = false;
+//    $(document).ready(function () {
+//        console.log("字母初始化过了吗："+ ifInit);
+//        if (ifInit) return;
+//        initSlider();
+//        ifInit = true;
+//    })
+    initSlider();
     //初始化侧边栏的字母
     function initSlider() {
+        console.log("啥内容的"+$('.slider-nav').html());
+        if ($('.slider-nav').html() != null) {
+            return;
+        }
         $('#slider').sliderNav();
-        $('#transformers').sliderNav({items:['autobots','decepticons'], debug: true, height: '300', arrows: false});
+        //$('#transformers').sliderNav({items:['autobots','decepticons'], debug: true, height: '300', arrows: false});
 
         var currHeight = $(window).height() - 40;
         //alert(currHeight);
@@ -159,6 +171,7 @@
             async: false,
             //请求成功后的回调函数有两个参数
             success:function(data,textStatus){
+                $('#panel_ul_div').html("");
                 initPanelContent(data.data.product);
             }
         });
@@ -193,7 +206,7 @@
 </div>
 
 <script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-<script type='text/javascript' src='http://g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+<script type='text/javascript' src='dist/js/sm-extend.min.js' charset='utf-8'></script>
 <script src="assets/js/config.js"></script>
 <script src="dist/busi.js"></script>
 
